@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#2a2140">
+  <title>💜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="bg-hearts" aria-hidden="true"></div>
+
+  <div id="notification" class="notification" role="status" aria-live="polite">
+    <div class="notif-icon">💌</div>
+    <div>
+      <div class="notif-title"></div>
+      <div class="notif-text"></div>
+    </div>
+  </div>
+
+  <main id="app">
+    <div id="progress" class="progress" aria-hidden="true"></div>
+
+    <!-- 1. Intro -->
+    <section class="screen active" data-screen="intro">
+      <div class="terminal">
+        <div class="terminal-bar"><span></span><span></span><span></span></div>
+        <pre id="terminal-text" class="terminal-text"></pre>
+      </div>
+      <button id="intro-btn" class="btn hidden">Start 💜</button>
+    </section>
+
+    <!-- 2. Login -->
+    <section class="screen" data-screen="login">
+      <div class="card">
+        <div class="big-emoji">🔐</div>
+        <h1 id="login-title"></h1>
+        <p id="login-subtitle" class="muted"></p>
+        <form id="login-form" autocomplete="off">
+          <label id="login-label" for="login-input"></label>
+          <input id="login-input" type="text" autocapitalize="off" autocorrect="off" spellcheck="false">
+          <button class="btn" type="submit">Zaloguj</button>
+        </form>
+        <p id="login-msg" class="msg"></p>
+      </div>
+    </section>
+
+    <!-- 3. Quiz -->
+    <section class="screen" data-screen="quiz">
+      <div class="card">
+        <div id="quiz-counter" class="muted small"></div>
+        <h2 id="quiz-question"></h2>
+        <div id="quiz-body"></div>
+        <p id="quiz-msg" class="msg"></p>
+        <button id="quiz-next" class="btn hidden">Dalej →</button>
+      </div>
+    </section>
+
+    <!-- 4. Game -->
+    <section class="screen" data-screen="game">
+      <div class="game-head">
+        <h2 id="game-title"></h2>
+        <p id="game-subtitle" class="muted"></p>
+        <div class="meter"><div id="meter-fill" class="meter-fill"></div><span id="meter-label">0%</span></div>
+      </div>
+      <div id="game-area" class="game-area"></div>
+      <button id="game-next" class="btn hidden">Dalej →</button>
+    </section>
+
+    <!-- 5. Scratch -->
+    <section class="screen" data-screen="scratch">
+      <h2 id="scratch-title"></h2>
+      <p id="scratch-subtitle" class="muted"></p>
+      <div class="scratch-wrap">
+        <div id="scratch-secret" class="scratch-secret"></div>
+        <canvas id="scratch-canvas"></canvas>
+      </div>
+      <button id="scratch-next" class="btn hidden">Dalej →</button>
+    </section>
+
+    <!-- 6. Question -->
+    <section class="screen" data-screen="question">
+      <div class="big-emoji beat">💜</div>
+      <h1 id="q-text"></h1>
+      <div id="q-zone" class="q-zone">
+        <button id="q-yes" class="btn"></button>
+        <button id="q-no" class="btn btn-ghost"></button>
+      </div>
+    </section>
+
+    <!-- 7. Finale -->
+    <section class="screen" data-screen="finale">
+      <div class="big-emoji beat">💜</div>
+      <h1 id="finale-headline" class="headline"></h1>
+      <div id="finale-letter" class="letter"></div>
+      <p id="finale-signature" class="signature"></p>
+      <button id="replay" class="btn btn-ghost"></button>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
